@@ -1,13 +1,12 @@
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Evento {
     int id;
     int idOrganizador;
     int idLocal;
-    Date data; // Alterado para Date
+    Date data;
     String descricao;
-    ArrayList<Participante> participante;
+   /*  ArrayList<Participante> participante; */
     int vagas;
 
     public Evento(int id, int idOrganizador, int idLocal, Date data, String descricao, int vagas) {
@@ -17,7 +16,7 @@ public class Evento {
         this.data = data;
         this.descricao = descricao;
         this.vagas = vagas;
-        this.participante = new ArrayList<>();
+        /*this.participante = new ArrayList<>(); */
     }
 
     // Getters e Setters
@@ -61,9 +60,9 @@ public class Evento {
         this.descricao = descricao;
     }
 
-    public ArrayList<Participante> getParticipante() {
+    /* public ArrayList<Participante> getParticipante() {
         return participante;
-    }
+    } */
 
     public int getVagas() {
         return vagas;
@@ -74,7 +73,7 @@ public class Evento {
     }
 
     // Métodos para adicionar e remover participantes
-    public boolean addParticipante(Participante p) {
+  /* public boolean addParticipante(Participante p) {
         if (participante.size() < vagas) {
             participante.add(p);
             return true;
@@ -84,5 +83,5 @@ public class Evento {
 
     public boolean removeParticipante(Participante p) {
         return participante.remove(p);
-    }
+    } */
 }
