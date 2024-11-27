@@ -5,7 +5,7 @@ public class Organizador {
 
     
     public Organizador(String email, String NotificacaoO) {
-        this.email = Email;
+        this.Email = Email;
         this.NotificacaoO = NotificacaoO;
     }
 }

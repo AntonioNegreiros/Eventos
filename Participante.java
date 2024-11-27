@@ -2,7 +2,7 @@ public class Participante {
     String TelefoneParticipante;
     String NotificacaoP;
 
-public Aluno(
+public Participante(
 
     String TelefoneParticipante,
     String NotificacaoP
