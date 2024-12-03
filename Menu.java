@@ -53,7 +53,7 @@ public class Menu {
 
                         String vagas = scanner.next();
 
-                        String sql = "INSERT INTO Evento (id, idOrganizador, idLocal, data, descricao, participantes, vagas) "
+                        String sql = "INSERT INTO Evento (id, idOrganizador, idLocal, data, descricao, participante, vagas) "
                                 +
                                 "VALUES ('" + id + "', '" + idOrganizador + "', '" + idLocal + "', '" + data + "', '"
                                 + descricao + "', '" + participante + "', '" + vagas + "')";
@@ -68,13 +68,13 @@ public class Menu {
                     try (Connection con = DriverManager.getConnection(url, user, password);
                             Statement stm = con.createStatement()) {
                         System.out.println("Digite a descrição do local:");
-                        String Descricao = scanner.next();
+                        String descricao = scanner.next();
                         System.out.println("Digite a quantidade de vagas:");
-                        int Vagas = scanner.nextInt();
+                        int vagas = scanner.nextInt();
                         System.out.println("Digite o evento:");
-                        int Eventos = scanner.nextInt();
+                        String eventos = scanner.next();
 
-                        String sql = "INSERT INTO Local (Descricao, Vagas,Eventos) VALUES ('" + Descricao + "', '" + Vagas + "','" + Eventos +"')";
+                        String sql = "INSERT INTO Local (descricao, vagas,eventos) VALUES ('" + descricao + "', '" + vagas + "','" + eventos +"')";
                         stm.execute(sql);
                         System.out.println("Local cadastrado com sucesso.");
                     } catch (SQLException e) {
@@ -103,9 +103,9 @@ public class Menu {
                     try (Connection con = DriverManager.getConnection(url, user, password);
                             Statement stm = con.createStatement()) {
                         System.out.println("Digite o telefone do participante:");
-                        String telefone = scanner.next();
+                        String TelefoneParticipante = scanner.next();
 
-                        String sql = "INSERT INTO Participante (Telefone) VALUES ('" + telefone + "')";
+                        String sql = "INSERT INTO Participante (TelefoneParticipante) VALUES ('" + TelefoneParticipante + "')";
                         stm.execute(sql);
                         System.out.println("Participante cadastrado com sucesso.");
                     } catch (SQLException e) {
@@ -166,7 +166,7 @@ public class Menu {
                             ResultSet rs = stm.executeQuery("SELECT * FROM Participante")) {
                         System.out.println("Listagem dos participantes:");
                         while (rs.next()) {
-                            System.out.println("Telefone: " + rs.getString("Telefone"));
+                            System.out.println("Telefone: " + rs.getString("TelefoneParticipante"));
                         }
                     } catch (SQLException e) {
                         System.out.println("Erro ao listar participantes: " + e.getMessage());

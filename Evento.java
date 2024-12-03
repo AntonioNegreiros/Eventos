@@ -1,25 +1,20 @@
-import java.util.Date;
-
 public class Evento {
     int id;
     int idOrganizador;
     int idLocal;
-    Date data;
+    int data; 
     String descricao;
-   /*  ArrayList<Participante> participante; */
     int vagas;
 
-    public Evento(int id, int idOrganizador, int idLocal, Date data, String descricao, int vagas) {
+    public Evento(int id, int idOrganizador, int idLocal, int data, String descricao, int vagas) {
         this.id = id;
         this.idOrganizador = idOrganizador;
         this.idLocal = idLocal;
         this.data = data;
         this.descricao = descricao;
         this.vagas = vagas;
-        /*this.participante = new ArrayList<>(); */
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -44,11 +39,11 @@ public class Evento {
         this.idLocal = idLocal;
     }
 
-    public Date getData() { // Tipo corrigido para Date
+    public int getDataInt() { 
         return data;
     }
 
-    public void setData(Date data) { // Tipo corrigido para Date
+    public void setDataInt(int data) {
         this.data = data;
     }
 
@@ -60,10 +55,6 @@ public class Evento {
         this.descricao = descricao;
     }
 
-    /* public ArrayList<Participante> getParticipante() {
-        return participante;
-    } */
-
     public int getVagas() {
         return vagas;
     }
@@ -72,16 +63,4 @@ public class Evento {
         this.vagas = vagas;
     }
 
-    // Métodos para adicionar e remover participantes
-  /* public boolean addParticipante(Participante p) {
-        if (participante.size() < vagas) {
-            participante.add(p);
-            return true;
-        }
-        return false; // Evento cheio
-    }
-
-    public boolean removeParticipante(Participante p) {
-        return participante.remove(p);
-    } */
 }
